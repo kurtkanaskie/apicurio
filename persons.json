@@ -3,5 +3,19 @@
     "info": {
         "title": "Persons",
         "description": "Collection of Persons Design Pattern"
+    },
+    "paths": {
+        "/persons": {
+            "get": {}
+        }
+    },
+    "definitions": {
+        "Person": {
+            "properties": {
+                "fullName": {
+                    "type": "string"
+                }
+            }
+        }
     }
 }
