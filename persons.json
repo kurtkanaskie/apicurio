@@ -6,7 +6,19 @@
     },
     "paths": {
         "/persons": {
-            "get": {}
+            "get": {},
+            "post": {
+                "description": "Create a person",
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Person"
+                        }
+                    }
+                ]
+            }
         }
     },
     "definitions": {
@@ -14,6 +26,33 @@
             "properties": {
                 "fullName": {
                     "type": "string"
+                }
+            }
+        },
+        "PersonResponse": {
+            "properties": {
+                "metadata": {
+                    "$ref": "#/definitions/metadata"
+                },
+                "person": {
+                    "$ref": "#/definitions/Person"
+                }
+            }
+        },
+        "metadata": {
+            "properties": {
+                "self": {
+                    "type": "string"
+                }
+            }
+        },
+        "pagination": {
+            "properties": {
+                "totalCount": {
+                    "type": "number"
+                },
+                "count": {
+                    "type": "number"
                 }
             }
         }
