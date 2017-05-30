@@ -17,7 +17,14 @@
                             "$ref": "#/definitions/Person"
                         }
                     }
-                ]
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "$ref": "#/definitions/PersonResponse"
+                        }
+                    }
+                }
             }
         }
     },
@@ -26,16 +33,6 @@
             "properties": {
                 "fullName": {
                     "type": "string"
-                }
-            }
-        },
-        "PersonResponse": {
-            "properties": {
-                "metadata": {
-                    "$ref": "#/definitions/metadata"
-                },
-                "person": {
-                    "$ref": "#/definitions/Person"
                 }
             }
         },
@@ -55,6 +52,24 @@
                     "type": "number"
                 }
             }
-        }
+        },
+        "PersonsResponse": {
+            "properties": {
+                "metadata": {},
+                "pagination": {},
+                "persons": {}
+            }
+        },
+        "PersonResponse": {
+            "properties": {
+                "metadata": {
+                    "$ref": "#/definitions/metadata"
+                },
+                "person": {
+                    "$ref": "#/definitions/PersonWithIdentity"
+                }
+            }
+        },
+        "PersonWithIdentity": {}
     }
 }
